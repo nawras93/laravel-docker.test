@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "My Cool Post",
+      "author": "Ismail"
+    },
+    {
+      "title": "Another Cool Post",
+      "author": "Ahmed"
+    }
+  ],
+  "profile": {
+    "name": "Ismail",
+    "email": "ismailmoh221@gmail.com"
+  }
+}
