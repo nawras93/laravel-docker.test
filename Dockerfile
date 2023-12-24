@@ -1,11 +1,11 @@
-FROM node:latest
+FROM nginx:stable-alpine
 
-WORKDIR /home/server
+ENV NGINXUSER=laravel
+ENV NGINXGROUP=laravel
+RUN mkdir -p /var/www/html/public
 
-RUN npm install -g json-server
+ADD nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY db.json /home/server/db.json
+RUN sed -i "s/user www-data;/user laravel/g" /etc/nginx/nginx.conf
 
-EXPOSE 3000
-
-ENTRYPOINT [ "json-server", "--watch", "db.json", "--host", "0.0.0.0" ]
+RUN adduser -g ${NGINXGROUP} -s /bin/sh -D ${NGINXUSER}
