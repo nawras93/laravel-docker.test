@@ -12,5 +12,5 @@ docker stop
 docker-compose up
 docker-compose down
 docker-compose ps
-
+docker-compose run --rm composer COMMAND
 ```
