@@ -13,4 +13,5 @@ docker-compose up
 docker-compose down
 docker-compose ps
 docker-compose run --rm composer COMMAND
+docker-compose -f docker-compose.prod.yml -f docker-compose.yml up --build
 ```
